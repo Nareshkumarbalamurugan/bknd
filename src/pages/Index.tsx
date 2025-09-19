@@ -6,8 +6,11 @@ import FeaturedProjects from "@/components/portfolio/FeaturedProjects"
 import WhyChooseUs from "@/components/portfolio/WhyChooseUs"
 import Contact from "@/components/portfolio/Contact"
 import { useEffect } from "react"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const Index = () => {
+  useScrollAnimation()
+  
   useEffect(() => {
     // Update page title and meta description for SEO
     document.title = "BKND Group - Professional Software Solutions | Web Development, AI & Mobile Apps"
