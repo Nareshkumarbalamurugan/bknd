@@ -2,41 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* BKND Group Premium Design System - Black & Gold Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Core Brand Colors - Black & Gold */
+    --background: 0 0% 3%;
+    --foreground: 45 100% 95%;
+    
+    --card: 0 0% 5%;
+    --card-foreground: 45 100% 95%;
+    
+    --primary: 45 100% 60%; /* Gold */
+    --primary-foreground: 0 0% 5%;
+    
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 45 80% 85%;
+    
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 5%;
+    
+    --muted: 0 0% 10%;
+    --muted-foreground: 45 20% 65%;
+    
+    /* Premium Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 60%), hsl(45 100% 45%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --gradient-luxury: linear-gradient(135deg, hsl(0 0% 5%), hsl(45 100% 60% / 0.1), hsl(0 0% 5%));
+    
+    /* Shadows & Effects */
+    --shadow-gold: 0 10px 40px hsl(45 100% 60% / 0.3);
+    --shadow-premium: 0 20px 60px hsl(0 0% 0% / 0.5);
+    --glow-gold: 0 0 30px hsl(45 100% 60% / 0.6);
+    
+    /* Borders */
+    --border: 0 0% 15%;
+    --border-gold: 45 100% 60%;
+    
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +105,71 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Premium Typography */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .bg-gradient-luxury {
+    background: var(--gradient-luxury);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+  
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Premium Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: var(--glow-gold); }
+  100% { box-shadow: 0 0 50px hsl(45 100% 60% / 0.8); }
 }
