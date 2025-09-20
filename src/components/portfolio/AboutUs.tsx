@@ -40,10 +40,27 @@ const AboutUs = () => {
 
   return (
     <section id="about" className="py-32 bg-gradient-dark relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-morph"></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary/8 rounded-full blur-3xl animate-float"></div>
+      </div>
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-primary/30 rounded-full animate-3d-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${6 + Math.random() * 4}s`
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4">
@@ -58,24 +75,26 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Achievements Section */}
+        {/* Enhanced Achievements Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {achievements.map((achievement, index) => (
             <div 
               key={index}
-              className="text-center scroll-animate-scale hover-lift"
+              className="text-center scroll-animate-scale hover-lift magnetic group"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative inline-block mb-6">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow"></div>
-                <div className="relative w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center glow-subtle">
-                  <achievement.icon className="w-10 h-10 text-primary-foreground" />
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-intense group-hover:animate-morph"></div>
+                <div className="relative w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center glow-intense group-hover:animate-3d-bounce">
+                  <achievement.icon className="w-10 h-10 text-primary-foreground animate-3d-subtle" />
                 </div>
               </div>
-              <h3 className="text-4xl md:text-5xl font-black text-gradient-gold mb-2">
+              <h3 className="text-4xl md:text-5xl font-black text-gradient-gold mb-2 animate-text-flicker">
                 {achievement.number}
               </h3>
-              <p className="text-lg text-muted-foreground">{achievement.label}</p>
+              <p className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
+                {achievement.label}
+              </p>
             </div>
           ))}
         </div>

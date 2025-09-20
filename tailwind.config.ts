@@ -213,6 +213,62 @@ export default {
             transform: "translateZ(5px) rotateX(1deg)" 
           },
         },
+        "morph": {
+          "0%, 100%": { 
+            borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" 
+          },
+          "50%": { 
+            borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" 
+          },
+        },
+        "blob": {
+          "0%": { 
+            transform: "translate(0px, 0px) scale(1)" 
+          },
+          "33%": { 
+            transform: "translate(30px, -50px) scale(1.1)" 
+          },
+          "66%": { 
+            transform: "translate(-20px, 20px) scale(0.9)" 
+          },
+          "100%": { 
+            transform: "translate(0px, 0px) scale(1)" 
+          },
+        },
+        "magnetic": {
+          "0%, 100%": { 
+            transform: "rotate(0deg) scale(1)" 
+          },
+          "50%": { 
+            transform: "rotate(5deg) scale(1.05)" 
+          },
+        },
+        "pulse-intense": {
+          "0%, 100%": { 
+            transform: "scale(1)",
+            filter: "brightness(1) saturate(1)"
+          },
+          "50%": { 
+            transform: "scale(1.05)",
+            filter: "brightness(1.2) saturate(1.3)"
+          },
+        },
+        "shimmer-sweep": {
+          "0%": { 
+            left: "-100%" 
+          },
+          "100%": { 
+            left: "100%" 
+          },
+        },
+        "text-flicker": {
+          "0%, 100%": { 
+            textShadow: "0 0 4px rgba(255, 215, 0, 0.8)" 
+          },
+          "50%": { 
+            textShadow: "0 0 8px rgba(255, 215, 0, 1), 0 0 12px rgba(255, 215, 0, 0.8)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -234,6 +290,12 @@ export default {
         "3d-sparkle": "3d-sparkle 8s linear infinite",
         "3d-glow": "3d-glow 3s ease-in-out infinite",
         "3d-subtle": "3d-subtle 6s ease-in-out infinite",
+        "morph": "morph 8s ease-in-out infinite",
+        "blob": "blob 7s ease-in-out infinite",
+        "magnetic": "magnetic 4s ease-in-out infinite",
+        "pulse-intense": "pulse-intense 2s ease-in-out infinite",
+        "shimmer-sweep": "shimmer-sweep 3s infinite",
+        "text-flicker": "text-flicker 2s ease-in-out infinite",
       },
     },
   },
