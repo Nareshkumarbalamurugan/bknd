@@ -33,9 +33,9 @@ const AboutUs = () => {
   ]
 
   const achievements = [
-    { icon: Award, number: "50+", label: "Projects Delivered" },
+    { icon: Award, number: "10+", label: "Projects Delivered" },
     { icon: Star, number: "98%", label: "Client Satisfaction" },
-    { icon: Trophy, number: "5+", label: "Years Experience" }
+    { icon: Trophy, number: "3+", label: "Years Experience" }
   ]
 
   return (
@@ -196,7 +196,7 @@ const AboutUs = () => {
                 <p className="text-lg leading-relaxed text-foreground/90">
                   Empowering businesses with technology to build a smarter future. We envision 
                   a world where every business can harness the power of modern technology to 
-                  achieve <span className="text-primary font-semibold">extraordinary growth</span> 
+                  achieve <span className="text-primary font-semibold">extraordinary growth </span> 
                   and lasting success.
                 </p>
               </div>

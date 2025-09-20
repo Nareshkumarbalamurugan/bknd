@@ -25,31 +25,20 @@ const Contact = () => {
       value: "bkndgroups@gmail.com",
       href: "mailto:bkndgroups@gmail.com"
     },
-    {
-      icon: Globe,
-      label: "Website",
-      value: "bkndgroup.com",
-      href: "https://bkndgroup.com"
-    }
+  
   ]
 
   const socialLinks = [
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/nareshkumarbalamurugan/",
       color: "text-blue-400"
-    },
-    {
-      icon: Instagram,
-      label: "Instagram", 
-      href: "#",
-      color: "text-pink-400"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "#",
+      href: "https://github.com/nareshkumarbalamurugan",
       color: "text-foreground"
     },
     {

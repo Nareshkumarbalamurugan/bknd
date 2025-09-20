@@ -37,7 +37,7 @@ const Index = () => {
       <footer className="bg-background border-t border-border-gold/20 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-muted-foreground">
-            © 2024 BKND Group. All rights reserved. 
+            © 2025 BKND Group. All rights reserved. 
             <span className="text-gradient-gold mx-2">|</span>
             Empowering businesses with technology.
           </p>

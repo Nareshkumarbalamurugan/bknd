@@ -1,11 +1,8 @@
 import { Card } from "@/components/ui/card"
 import { PremiumButton } from "@/components/ui/premium-button"
 import { ExternalLink, PlayCircle, Star, Award, Rocket } from "lucide-react"
-import infanMockup from "@/assets/infan-mockup.jpg"
-import yuvaupdateMockup from "@/assets/yuvaupdate-mockup.jpg"
-import converterMockup from "@/assets/converter-mockup.jpg"
-import tiruvannamalaiMockup from "@/assets/tiruvannamalai-mockup.jpg"
-import desicolourMockup from "@/assets/desicolour-mockup.jpg"
+// Use images from the public folder (served at the project root by Vite)
+// public files are available at '/<filename>' at runtime
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const FeaturedProjects = () => {
@@ -15,7 +12,7 @@ const FeaturedProjects = () => {
     {
       title: "infan.online",
       description: "Influencers' content monetization platform with integrated payment gateway",
-      image: infanMockup,
+      image: '/infan.png',
       tech: ["React", "Node.js", "Payment Gateway", "Analytics"],
       url: "https://infan.online",
       type: "Web Platform",
@@ -25,7 +22,7 @@ const FeaturedProjects = () => {
     {
       title: "yuvaupdate.in",
       description: "News article platform with mobile app available on Play Store",
-      image: yuvaupdateMockup,
+      image: '/yuvaupdate1.png',
       tech: ["React Native", "CMS", "Push Notifications", "SEO"],
       url: "https://yuvaupdate.in",
       type: "News Platform",
@@ -35,7 +32,7 @@ const FeaturedProjects = () => {
     {
       title: "converterpro.online",
       description: "Comprehensive online unit conversion tool with intuitive interface",
-      image: converterMockup,
+      image: '/converterpro.png',
       tech: ["Vue.js", "PWA", "Offline Support", "API"],
       url: "https://converterpro.online",
       type: "Utility Tool",
@@ -45,7 +42,7 @@ const FeaturedProjects = () => {
     {
       title: "tiruvannamalai.site",
       description: "Tourism and spiritual guide showcasing cultural heritage",
-      image: tiruvannamalaiMockup,
+      image: '/tiruvannamalai.png',
       tech: ["Next.js", "CMS", "SEO", "Interactive Maps"],
       url: "https://tiruvannamalai.site",
       type: "Tourism Guide",
@@ -55,7 +52,7 @@ const FeaturedProjects = () => {
     {
       title: "desicolour.com",
       description: "Modern lifestyle and fashion brand e-commerce platform",
-      image: desicolourMockup,
+      image: '/desicolour.png',
       tech: ["React", "E-commerce", "Payment Gateway", "Inventory"],
       url: "https://desicolour.com",
       type: "E-commerce",
