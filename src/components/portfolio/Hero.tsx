@@ -26,7 +26,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-16">
       {/* Enhanced Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
@@ -61,8 +61,8 @@ const Hero = () => {
         <Rocket className="absolute bottom-1/3 left-20 w-7 h-7 text-primary/25 animate-3d-rocket transform-3d" style={{ animationDelay: '5s' }} />
       </div>
       
-      {/* Enhanced Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+      {/* Enhanced Content - Properly centered */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 text-center flex flex-col justify-center min-h-screen py-20">
         
         {/* Enhanced Company Name with stunning 3D animation */}
         <div className="scroll-animate perspective-1000">
@@ -98,24 +98,24 @@ const Hero = () => {
           </p>
         </div>
         
-        {/* Enhanced CTA Buttons with 3D effects */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 scroll-animate perspective-1000" style={{ animationDelay: '1s' }}>
+        {/* Enhanced CTA Buttons with subtle effects */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 scroll-animate" style={{ animationDelay: '1s' }}>
           <PremiumButton 
             variant="gold" 
             size="xl"
-            className="hover-3d-lift shadow-luxury transform-3d animate-3d-bounce"
+            className="shadow-luxury transition-all duration-300 hover:shadow-gold hover:scale-105"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <Rocket className="w-5 h-5 mr-2 animate-3d-rocket" />
+            <Rocket className="w-5 h-5 mr-2" />
             Explore Our Services
           </PremiumButton>
           <PremiumButton 
             variant="outline" 
             size="xl"
-            className="hover-3d-glow transform-3d animate-3d-pulse"
+            className="transition-all duration-300 hover:shadow-glow-subtle hover:scale-105"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <Sparkles className="w-5 h-5 mr-2 animate-3d-sparkle" />
+            <Sparkles className="w-5 h-5 mr-2" />
             Get In Touch
           </PremiumButton>
         </div>
