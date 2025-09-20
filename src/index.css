@@ -410,6 +410,56 @@
   }
 }
 
+/* 3D Transform utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.hover-3d-tilt:hover {
+  transform: rotateY(15deg) rotateX(5deg) translateZ(20px);
+  transition: transform 0.3s ease;
+}
+
+.hover-3d-lift:hover {
+  transform: translateY(-10px) translateZ(20px) rotateX(5deg);
+  transition: transform 0.3s ease;
+}
+
+.hover-3d-glow:hover {
+  transform: translateZ(10px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hover-3d-word:hover {
+  transform: translateZ(10px) rotateY(5deg);
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Mobile 3D animations - always active on mobile */
+@media (max-width: 768px) {
+  .hover-3d-tilt {
+    animation: 3d-float 6s ease-in-out infinite;
+  }
+  
+  .hover-3d-lift {
+    animation: 3d-bounce 4s ease-in-out infinite;
+  }
+  
+  .hover-3d-glow {
+    animation: 3d-pulse 3s ease-in-out infinite;
+  }
+}
+
 /* Performance optimized animations */
 @media (prefers-reduced-motion: no-preference) {
   .will-change-auto {

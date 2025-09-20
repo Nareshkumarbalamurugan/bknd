@@ -118,6 +118,101 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        "3d-float": {
+          "0%, 100%": { 
+            transform: "translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg)" 
+          },
+          "25%": { 
+            transform: "translateY(-10px) translateZ(20px) rotateX(5deg) rotateY(5deg)" 
+          },
+          "50%": { 
+            transform: "translateY(-5px) translateZ(30px) rotateX(0deg) rotateY(10deg)" 
+          },
+          "75%": { 
+            transform: "translateY(-8px) translateZ(15px) rotateX(-3deg) rotateY(-5deg)" 
+          },
+        },
+        "3d-float-reverse": {
+          "0%, 100%": { 
+            transform: "translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg)" 
+          },
+          "25%": { 
+            transform: "translateY(-8px) translateZ(15px) rotateX(-3deg) rotateY(-5deg)" 
+          },
+          "50%": { 
+            transform: "translateY(-5px) translateZ(30px) rotateX(0deg) rotateY(-10deg)" 
+          },
+          "75%": { 
+            transform: "translateY(-10px) translateZ(20px) rotateX(5deg) rotateY(-5deg)" 
+          },
+        },
+        "3d-spin": {
+          "0%": { transform: "rotateY(0deg) rotateX(0deg)" },
+          "25%": { transform: "rotateY(90deg) rotateX(0deg)" },
+          "50%": { transform: "rotateY(180deg) rotateX(10deg)" },
+          "75%": { transform: "rotateY(270deg) rotateX(0deg)" },
+          "100%": { transform: "rotateY(360deg) rotateX(0deg)" },
+        },
+        "3d-bounce": {
+          "0%, 100%": { 
+            transform: "translateY(0) translateZ(0) rotateX(0deg)" 
+          },
+          "50%": { 
+            transform: "translateY(-10px) translateZ(20px) rotateX(5deg)" 
+          },
+        },
+        "3d-pulse": {
+          "0%, 100%": { 
+            transform: "scale(1) translateZ(0px)" 
+          },
+          "50%": { 
+            transform: "scale(1.05) translateZ(10px)" 
+          },
+        },
+        "3d-rocket": {
+          "0%, 100%": { 
+            transform: "translateY(0px) rotateZ(0deg)" 
+          },
+          "25%": { 
+            transform: "translateY(-5px) rotateZ(5deg)" 
+          },
+          "50%": { 
+            transform: "translateY(-10px) rotateZ(0deg)" 
+          },
+          "75%": { 
+            transform: "translateY(-5px) rotateZ(-5deg)" 
+          },
+        },
+        "3d-sparkle": {
+          "0%, 100%": { 
+            transform: "rotate(0deg) scale(1)" 
+          },
+          "25%": { 
+            transform: "rotate(90deg) scale(1.1)" 
+          },
+          "50%": { 
+            transform: "rotate(180deg) scale(1)" 
+          },
+          "75%": { 
+            transform: "rotate(270deg) scale(1.1)" 
+          },
+        },
+        "3d-glow": {
+          "0%, 100%": { 
+            textShadow: "0 0 10px rgba(255, 215, 0, 0.5)" 
+          },
+          "50%": { 
+            textShadow: "0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6)" 
+          },
+        },
+        "3d-subtle": {
+          "0%, 100%": { 
+            transform: "translateZ(0px) rotateX(0deg)" 
+          },
+          "50%": { 
+            transform: "translateZ(5px) rotateX(1deg)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +225,15 @@ export default {
         "slide-in": "slide-in 0.6s ease-out",
         "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
         "rotate-slow": "rotate-slow 20s linear infinite",
+        "3d-float": "3d-float 8s ease-in-out infinite",
+        "3d-float-reverse": "3d-float-reverse 8s ease-in-out infinite reverse",
+        "3d-spin": "3d-spin 12s linear infinite",
+        "3d-bounce": "3d-bounce 3s ease-in-out infinite",
+        "3d-pulse": "3d-pulse 4s ease-in-out infinite",
+        "3d-rocket": "3d-rocket 6s ease-in-out infinite",
+        "3d-sparkle": "3d-sparkle 8s linear infinite",
+        "3d-glow": "3d-glow 3s ease-in-out infinite",
+        "3d-subtle": "3d-subtle 6s ease-in-out infinite",
       },
     },
   },
