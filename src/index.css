@@ -126,6 +126,27 @@
   }
 }
 
+/* Fix: prevent unwanted horizontal gap/overflow on mobile */
+@media (max-width: 1024px) {
+  html, body, #root {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by overflow */
+  }
+
+  /* Ensure images and media don't overflow their containers */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent large fixed-width elements from creating horizontal scroll */
+  .container, .max-w-7xl, .max-w-3xl, .max-w-4xl {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 @layer components {
   /* Premium Typography */
   .text-gradient-gold {

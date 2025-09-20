@@ -96,10 +96,10 @@ const FeaturedProjects = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1], delay: index * 0.06 }}
-              className="will-change-transform"
+              className="will-change-transform w-full"
             >
               <Card 
-                className="overflow-hidden bg-gradient-card border-border-gold/30 hover-glow scroll-animate-scale shadow-luxury group relative transform-3d"
+                className="overflow-hidden bg-gradient-card border-border-gold/30 hover-glow scroll-animate-scale shadow-luxury group relative transform-3d w-full h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
               {/* Enhanced Project Image */}
