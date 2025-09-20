@@ -4,6 +4,8 @@ import { ExternalLink, PlayCircle, Star, Award, Rocket } from "lucide-react"
 // Use images from the public folder (served at the project root by Vite)
 // public files are available at '/<filename>' at runtime
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useTilt from "@/hooks/useTilt"
+import { motion } from 'framer-motion'
 
 const FeaturedProjects = () => {
   useScrollAnimation()
@@ -83,12 +85,23 @@ const FeaturedProjects = () => {
 
         {/* Enhanced Projects Grid */}
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10 mb-20">
-          {projects.map((project, index) => (
-            <Card 
+          {projects.map((project, index) => {
+            const { ref, style } = useTilt<HTMLDivElement>()
+            return (
+            <motion.div
               key={index}
-              className="overflow-hidden bg-gradient-card border-border-gold/30 hover-glow scroll-animate-scale shadow-luxury group relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              ref={ref}
+              style={style}
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1], delay: index * 0.06 }}
+              className="will-change-transform"
             >
+              <Card 
+                className="overflow-hidden bg-gradient-card border-border-gold/30 hover-glow scroll-animate-scale shadow-luxury group relative transform-3d"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
               {/* Enhanced Project Image */}
               <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -163,8 +176,9 @@ const FeaturedProjects = () => {
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </Card>
-          ))}
+              </Card>
+            </motion.div>
+          )})}
         </div>
 
         {/* Enhanced CTA */}
